@@ -3,7 +3,7 @@ class FastCbench < Trema::Controller
   def start(_args)
     @work_queue = Queue.new
     10.times { start_worker_thread }
-    logger.info 'Cbench started.'
+    logger.info "#{name} started."
   end
 
   def packet_in(datapath_id, message)
