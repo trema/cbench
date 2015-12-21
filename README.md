@@ -41,8 +41,6 @@ Run this controller
 
 ```
 $ ./bin/trema run ./lib/cbench.rb
-or
-$ ./bin/trema run ./lib/fast_cbench.rb  # multi-threaded version
 ```
 
 then, on another terminal
