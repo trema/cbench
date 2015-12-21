@@ -33,7 +33,8 @@ Given(/^I trema run "([^"]*)" with args "([^"]*)"$/) do |controller, args|
 end
 
 When(/^I trema run "([^"]*)" interactively$/) do |controller_file|
-  step %(I run `trema run #{controller_file}` interactively)
+  controller_path = File.join('..', '..', controller_file)
+  step %(I run `trema run #{controller_path}` interactively)
 end
 
 # rubocop:disable LineLength
