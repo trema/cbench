@@ -1,0 +1,2 @@
+excludes:
+  - features/step_definitions
