@@ -1,7 +1,8 @@
 source 'https://rubygems.org'
 
 gem 'rake'
-gem 'trema'
+gem 'pio', github: 'trema/pio', branch: 'develop'
+gem 'trema', github: 'trema/trema', branch: 'develop'
 
 group :development, :test do
   gem 'aruba', require: false
