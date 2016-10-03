@@ -6,7 +6,7 @@ bundler_args: --without development
 
 rvm:
   - 2.2
-  - 2.3.0
+  - 2.3
   - ruby-head
 
 before_install:
