@@ -1,5 +1,5 @@
 GIT
-  remote: git://github.com/trema/pio.git
+  remote: https://github.com/trema/pio.git
   revision: e29c289d9abfdeeb64eeb6ea0223b2a96252719e
   branch: develop
   specs:
@@ -9,7 +9,7 @@ GIT
       bundler (>= 1.11.2, < 2.0)
 
 GIT
-  remote: git://github.com/trema/trema.git
+  remote: https://github.com/trema/trema.git
   revision: 50b5a383bb73bc60695048095aef8217071c970d
   branch: develop
   specs:
@@ -230,4 +230,4 @@ DEPENDENCIES
   yard
 
 BUNDLED WITH
-   1.12.5
+   1.13.2
