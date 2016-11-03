@@ -5,20 +5,17 @@ class FastCbench < Trema::Controller
   end
 
   def packet_in(dpid, packet_in)
-    @flow_mod_binary ||= create_flow_mod(packet_in).to_binary
-    send_message_binary dpid, @flow_mod_binary
+    send_message_binary dpid, flow_mod_binary(packet_in)
   end
 
   private
 
-  def create_flow_mod(packet_in)
-    FlowMod.new(command: :add,
-                priority: 0,
-                transaction_id: 0,
-                idle_timeout: 0,
-                hard_timeout: 0,
-                buffer_id: packet_in.buffer_id,
-                match: ExactMatch.new(packet_in),
-                actions: SendOutPort.new(packet_in.in_port + 1))
+  # This method smells of :reek:FeatureEnvy
+  def flow_mod_binary(packet_in)
+    @flow_mod_binary ||=
+      FlowMod.new(command: :add,
+                  buffer_id: packet_in.buffer_id,
+                  match: ExactMatch.new(packet_in),
+                  actions: SendOutPort.new(packet_in.in_port + 1)).to_binary
   end
 end
