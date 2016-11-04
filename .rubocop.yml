@@ -9,3 +9,7 @@ Style/StringLiterals:
 
 Style/DotPosition:
   EnforcedStyle: trailing
+
+Metrics/LineLength:
+  Exclude:
+    - spec/**/*_spec.rb
